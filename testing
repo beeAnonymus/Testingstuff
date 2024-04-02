@@ -940,6 +940,7 @@ local Attack = function()
 					print("teeststuff is not true")
 				else 
 					print("ClickDetector not found in KnifeBuy.")
+					KnifeBuy.ClickDetector.MouseClick()
 					print(KnifeBuy)
 				end
 			
