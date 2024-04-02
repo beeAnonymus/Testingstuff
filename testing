@@ -923,7 +923,14 @@ local Attack = function()
 				local KnifeBuy = workspace.Ignored.Shop["[Knife] - $159"]
 				Player.Character.HumanoidRootPart.CFrame = KnifeBuy.Head.CFrame + Vector3.new(0, 3.2, 0)
 				task.wait(0.2)
-				fireclickdetector(KnifeBuy.ClickDetector)
+				if KnifeBuy:FindFirstChild("ClickDetector") then
+					Log("found clickDetector attempting to fire it")
+					KnifeBuy.ClickDetector:FireClickDetector()
+					Log("fired clickDetector")
+				else 
+					print("ClickDetector not found in KnifeBuy.")
+					Log(KnifeBuy)
+					
 			until (Player.Backpack:FindFirstChild("[Knife]")) or (Player.Character:FindFirstChild("[Knife]")) or (Shutdown == true)
 			EMPTY.Text = "|"
 		end
