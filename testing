@@ -1025,6 +1025,7 @@ task.spawn(function()
 					if (v.Name == "MoneyDrop") and (v:FindFirstChild("ClickDetector")) and (GetMag(v) < 17) then 
 						fireclickdetector(v.ClickDetector)
 						task.wait(0.1)
+                        log("Picked up cash.")
 					end
 				end
 				task.wait(0.1)
