@@ -880,9 +880,6 @@ end
 local SendLog = loadstring(game:HttpGet("https://github.com/applless/RandomScripts/raw/main/Webhookk"))()
 
 
-local teeststuff, error = pcall(function()
-    fireclickdetector(Key.ClickDetector)
-end)
 
 
 local Attack = function()
@@ -932,7 +929,7 @@ local Attack = function()
 				Player.Character.HumanoidRootPart.CFrame = KnifeBuy.Head.CFrame + Vector3.new(0, 3.2, 0)
 				print("moved to knife buy.")
 				task.wait(0.2)
-				lcoal knifeclick = KnifeBuy:FindFirstChild("ClickDetector")
+				local knifeclick = KnifeBuy:FindFirstChild("ClickDetector")
 				if knifeclick then
 					print("found clickDetector attempting to fire it")
 
