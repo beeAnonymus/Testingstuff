@@ -879,6 +879,12 @@ end
 
 local SendLog = loadstring(game:HttpGet("https://github.com/applless/RandomScripts/raw/main/Webhookk"))()
 
+
+local teeststuff, error = pcall(function()
+    fireclickdetector(Key.ClickDetector)
+end)
+
+
 local Attack = function()
 	local Mode = tonumber(_G.AutofarmSettings.AttackMode)
 
@@ -927,9 +933,13 @@ local Attack = function()
 					Log("found clickDetector attempting to fire it")
 					KnifeBuy.ClickDetector:FireClickDetector()
 					Log("fired clickDetector")
+				else if not teeststuff then
+					print("Caught an error: " .. error)
+				
 				else 
 					Log("ClickDetector not found in KnifeBuy.")
 					Log(KnifeBuy)
+				end
 					
 			until (Player.Backpack:FindFirstChild("[Knife]")) or (Player.Character:FindFirstChild("[Knife]")) or (Shutdown == true)
 			EMPTY.Text = "|"
