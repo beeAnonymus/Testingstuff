@@ -955,10 +955,7 @@ local AntiSit = function(Char)
 		--// theres prob a better method to do this but im lazy lol
 	end)
 end
-local ClickDetectorActivastion, error = pcall(function(string))
-	local clickDetector = string
-	fireclickdetector(clickDetector)
-end
+
 --// Main
 task.spawn(function()
 	while true and task.wait(0.2) do 
@@ -1027,10 +1024,7 @@ task.spawn(function()
 				for i,v in pairs(workspace.Ignored.Drop:GetChildren()) do 
 					if (v.Name == "MoneyDrop") and (v:FindFirstChild("ClickDetector")) and (GetMag(v) < 17) then 
 						
-	
-						if not ClickDetectorActivastion then
-							print("Error: " .. error)
-						else if v:FindFirstChild("ClickDetector") then
+						if v:FindFirstChild("ClickDetector") then
 							Log("found clickDetector attempting to fire it")
 							v.ClickDetector:FireClickDetector()
 							Log("fired clickDetector")
