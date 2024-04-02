@@ -933,7 +933,7 @@ local Attack = function()
 				if knifeclick then
 					print("found clickDetector attempting to fire it")
 
-					knifeclick:FireClickDetector()
+					knifeclick.Enabled = true
 					print("fired clickDetector")
 				else
 					print("knifeclick not found.")
