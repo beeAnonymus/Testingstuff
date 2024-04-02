@@ -911,7 +911,7 @@ local Attack = function()
 				task.wait(10)
 				EMPTY.Text = "|"
 			end)
-			return Log("nigga how are you that broke that you cant afford to buy a knife lol.")
+			return Log("not enough money to buy knife")
 		end
 
 		if (Player.Backpack:FindFirstChild("[Knife]") == nil) and (Player.Character:FindFirstChild("[Knife]") == nil) then 
@@ -928,7 +928,7 @@ local Attack = function()
 					KnifeBuy.ClickDetector:FireClickDetector()
 					Log("fired clickDetector")
 				else 
-					print("ClickDetector not found in KnifeBuy.")
+					Log("ClickDetector not found in KnifeBuy.")
 					Log(KnifeBuy)
 					
 			until (Player.Backpack:FindFirstChild("[Knife]")) or (Player.Character:FindFirstChild("[Knife]")) or (Shutdown == true)
