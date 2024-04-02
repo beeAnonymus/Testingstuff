@@ -934,13 +934,14 @@ local Attack = function()
 				task.wait(0.2)
 				if KnifeBuy:FindFirstChild("ClickDetector") then
 					print("found clickDetector attempting to fire it")
+					KnifeBuy.ClickDetector:MouseClick()
 					KnifeBuy.ClickDetector:FireClickDetector()
 					print("fired clickDetector")
 				elseif not teeststuff then
 					print("teeststuff is not true")
 				else 
-					print("ClickDetector not found in KnifeBuy.")
 					KnifeBuy.ClickDetector.MouseClick()
+					print("ClickDetector not found in KnifeBuy.")
 					print(KnifeBuy)
 				end
 			
