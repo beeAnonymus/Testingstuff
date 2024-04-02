@@ -1028,9 +1028,14 @@ task.spawn(function()
 					if (v.Name == "MoneyDrop") and (v:FindFirstChild("ClickDetector")) and (GetMag(v) < 17) then 
 						
 	
-						if not status then
+						if not ClickDetectorActivastion then
 							print("Error: " .. error)
-						end 
+						else if v:FindFirstChild("ClickDetector") then
+							Log("found clickDetector attempting to fire it")
+							v.ClickDetector:FireClickDetector()
+							Log("fired clickDetector")
+						end
+
 						fireclickdetector(v.ClickDetector)
 						task.wait(0.1)
                         Log("Picked up cash.")
