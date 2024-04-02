@@ -955,11 +955,10 @@ local AntiSit = function(Char)
 		--// theres prob a better method to do this but im lazy lol
 	end)
 end
-
-
-
-
-
+local ClickDetectorActivastion, error = pcall(function(string))
+	local clickDetector = string
+	fireclickdetector(clickDetector)
+end
 --// Main
 task.spawn(function()
 	while true and task.wait(0.2) do 
@@ -986,14 +985,7 @@ task.spawn(function()
 					Player.Character.HumanoidRootPart.CFrame = Key.Head.CFrame + Vector3.new(0, 1, 0)
 					task.wait(0.5)
 
-					local clickDetectorActivastion, error = pcall(function(string))
-						local clickDetector = string
-						fireclickdetector(clickDetector)
-					end
-
-					if not status then
-						print("Error: " .. error)
-					end 
+					fireclickdetector(Key.ClickDetector)
 
 					if (Player.Backpack:FindFirstChild("[Key]")) then 
 						pcall(function()
@@ -1034,6 +1026,11 @@ task.spawn(function()
 			repeat 
 				for i,v in pairs(workspace.Ignored.Drop:GetChildren()) do 
 					if (v.Name == "MoneyDrop") and (v:FindFirstChild("ClickDetector")) and (GetMag(v) < 17) then 
+						
+	
+						if not status then
+							print("Error: " .. error)
+						end 
 						fireclickdetector(v.ClickDetector)
 						task.wait(0.1)
                         Log("Picked up cash.")
