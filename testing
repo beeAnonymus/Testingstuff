@@ -956,6 +956,10 @@ local AntiSit = function(Char)
 	end)
 end
 
+
+
+
+
 --// Main
 task.spawn(function()
 	while true and task.wait(0.2) do 
@@ -982,7 +986,14 @@ task.spawn(function()
 					Player.Character.HumanoidRootPart.CFrame = Key.Head.CFrame + Vector3.new(0, 1, 0)
 					task.wait(0.5)
 
-					fireclickdetector(Key.ClickDetector)
+					local clickDetectorActivastion, error = pcall(function(string))
+						local clickDetector = string
+						fireclickdetector(clickDetector)
+					end
+
+					if not status then
+						print("Error: " .. error)
+					end 
 
 					if (Player.Backpack:FindFirstChild("[Key]")) then 
 						pcall(function()
