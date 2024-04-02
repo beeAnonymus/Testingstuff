@@ -1028,8 +1028,8 @@ task.spawn(function()
                         Log("Picked up cash.")
                         Log("Atm "..tostring(Index).."." )
                         Log("Distance: "..tostring(Dist)..".")
-                        Log(i)
-                        Log(v)
+                        Log(tostring(i))
+                        Log(tostring(v))
                         Log("Profit: "..tostring(Player.DataFolder.Currency.Value - StartedWith)..".")
 
 					end
