@@ -932,18 +932,16 @@ local Attack = function()
 				Player.Character.HumanoidRootPart.CFrame = KnifeBuy.Head.CFrame + Vector3.new(0, 3.2, 0)
 				print("moved to knife buy.")
 				task.wait(0.2)
-				if KnifeBuy:FindFirstChild("ClickDetector") then
+				lcoal knifeclick = KnifeBuy:FindFirstChild("ClickDetector")
+				if knifeclick then
 					print("found clickDetector attempting to fire it")
-					KnifeBuy.ClickDetector:MouseClick()
-					KnifeBuy.ClickDetector:FireClickDetector()
+
+					knifeclick:FireClickDetector()
 					print("fired clickDetector")
-				elseif not teeststuff then
-					print("teeststuff is not true")
-				else 
-					KnifeBuy.ClickDetector.MouseClick()
-					print("ClickDetector not found in KnifeBuy.")
-					print(KnifeBuy)
+				else
+					print("knifeclick not found.")
 				end
+					
 			
 				print("KnifeBuy: repeating")
 					
