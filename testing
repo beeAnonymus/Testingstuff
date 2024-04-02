@@ -1025,7 +1025,13 @@ task.spawn(function()
 					if (v.Name == "MoneyDrop") and (v:FindFirstChild("ClickDetector")) and (GetMag(v) < 17) then 
 						fireclickdetector(v.ClickDetector)
 						task.wait(0.1)
-                        Log("Picked up cash. atm "..tostring(Index).."." i, "\n", v)
+                        Log("Picked up cash.")
+                        Log("Atm "..tostring(Index).."." )
+                        Log("Distance: "..tostring(Dist)..".")
+                        Log(i)
+                        Log(v)
+                        Log("Profit: "..tostring(Player.DataFolder.Currency.Value - StartedWith)..".")
+
 					end
 				end
 				task.wait(0.1)
